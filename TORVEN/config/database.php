@@ -2,7 +2,7 @@
 $server = "localhost"; 
 $user = "root";
 $pass = "";
-$db = "TORVEN";
+$db = "torven";
 
 $conexion = new mysql($server, $user, $pass, $db);
 if($conexion->connect_errno){
