@@ -3,14 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-09-2026 a las 16:38:02
+-- Tiempo de generación: 08-09-2026 a las 10:00:00
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,6 +32,18 @@ CREATE TABLE `clientes` (
   `apellido` varchar(100) NOT NULL,
   `telefono` varchar(50) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagenes_producto`
+--
+
+CREATE TABLE `imagenes_producto` (
+  `id_imagen_producto` int(11) NOT NULL,
+  `url_imagen` varchar(255) NOT NULL,
+  `id_producto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -72,6 +83,23 @@ CREATE TABLE `preguntas_frecuentes` (
   `id_pregunta` int(11) NOT NULL,
   `pregunta` varchar(255) NOT NULL,
   `respuesta` text NOT NULL,
+  `id_taller` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos_venta`
+--
+
+CREATE TABLE `productos_venta` (
+  `id_producto` int(11) NOT NULL,
+  `nombre_producto` varchar(150) NOT NULL,
+  `categoria` varchar(50) NOT NULL COMMENT 'Repuesto, Accesorio, etc.',
+  `precio` decimal(12,2) NOT NULL,
+  `stock` int(11) NOT NULL DEFAULT 0,
+  `descripcion` text DEFAULT NULL,
+  `estado_publicacion` varchar(50) DEFAULT 'Disponible',
   `id_taller` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -142,6 +170,7 @@ CREATE TABLE `transacciones_venta` (
   `metodo_pago` varchar(50) DEFAULT NULL,
   `estado_transaccion` varchar(50) DEFAULT 'Pendiente',
   `id_vehiculo_venta` int(11) DEFAULT NULL,
+  `id_producto` int(11) DEFAULT NULL,
   `id_cliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -222,6 +251,13 @@ ALTER TABLE `clientes`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Indices de la tabla `imagenes_producto`
+--
+ALTER TABLE `imagenes_producto`
+  ADD PRIMARY KEY (`id_imagen_producto`),
+  ADD KEY `id_producto` (`id_producto`);
+
+--
 -- Indices de la tabla `imagenes_vehiculo`
 --
 ALTER TABLE `imagenes_vehiculo`
@@ -241,6 +277,13 @@ ALTER TABLE `opiniones`
 --
 ALTER TABLE `preguntas_frecuentes`
   ADD PRIMARY KEY (`id_pregunta`),
+  ADD KEY `id_taller` (`id_taller`);
+
+--
+-- Indices de la tabla `productos_venta`
+--
+ALTER TABLE `productos_venta`
+  ADD PRIMARY KEY (`id_producto`),
   ADD KEY `id_taller` (`id_taller`);
 
 --
@@ -276,6 +319,7 @@ ALTER TABLE `talleres`
 ALTER TABLE `transacciones_venta`
   ADD PRIMARY KEY (`id_transaccion`),
   ADD KEY `id_vehiculo_venta` (`id_vehiculo_venta`),
+  ADD KEY `id_producto` (`id_producto`),
   ADD KEY `id_cliente` (`id_cliente`);
 
 --
@@ -321,6 +365,12 @@ ALTER TABLE `clientes`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `imagenes_producto`
+--
+ALTER TABLE `imagenes_producto`
+  MODIFY `id_imagen_producto` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `imagenes_vehiculo`
 --
 ALTER TABLE `imagenes_vehiculo`
@@ -337,6 +387,12 @@ ALTER TABLE `opiniones`
 --
 ALTER TABLE `preguntas_frecuentes`
   MODIFY `id_pregunta` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `productos_venta`
+--
+ALTER TABLE `productos_venta`
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -403,6 +459,12 @@ ALTER TABLE `clientes`
   ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
+-- Filtros para la tabla `imagenes_producto`
+--
+ALTER TABLE `imagenes_producto`
+  ADD CONSTRAINT `imagenes_producto_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `productos_venta` (`id_producto`) ON DELETE CASCADE;
+
+--
 -- Filtros para la tabla `imagenes_vehiculo`
 --
 ALTER TABLE `imagenes_vehiculo`
@@ -420,6 +482,12 @@ ALTER TABLE `opiniones`
 --
 ALTER TABLE `preguntas_frecuentes`
   ADD CONSTRAINT `preguntas_frecuentes_ibfk_1` FOREIGN KEY (`id_taller`) REFERENCES `talleres` (`id_taller`);
+
+--
+-- Filtros para la tabla `productos_venta`
+--
+ALTER TABLE `productos_venta`
+  ADD CONSTRAINT `productos_venta_ibfk_1` FOREIGN KEY (`id_taller`) REFERENCES `talleres` (`id_taller`);
 
 --
 -- Filtros para la tabla `seguimientos`
@@ -444,7 +512,8 @@ ALTER TABLE `talleres`
 --
 ALTER TABLE `transacciones_venta`
   ADD CONSTRAINT `transacciones_venta_ibfk_1` FOREIGN KEY (`id_vehiculo_venta`) REFERENCES `vehiculos_venta` (`id_vehiculo_venta`),
-  ADD CONSTRAINT `transacciones_venta_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`);
+  ADD CONSTRAINT `transacciones_venta_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`),
+  ADD CONSTRAINT `transacciones_venta_ibfk_3` FOREIGN KEY (`id_producto`) REFERENCES `productos_venta` (`id_producto`);
 
 --
 -- Filtros para la tabla `turnos`
