@@ -198,6 +198,8 @@ CREATE TABLE `turnos` (
 --
 
 CREATE TABLE `usuarios` (
+  'nom_usuario' varchar(50) NOT NULL,
+  'telefono' varchar(20) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(255) NOT NULL,

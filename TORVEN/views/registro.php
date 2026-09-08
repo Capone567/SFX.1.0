@@ -25,7 +25,7 @@
         <p style="font-size:14px;color:#9CA3AF;">Registrate para reservar turnos y hacer seguimiento de tu vehículo.</p>
       </div>
 
-      <form action="#" method="POST" style="display:flex;flex-direction:column;gap:20px;">
+      <form action="../PHP/registro.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
 
         <!-- Nombre completo -->
         <div style="display:flex;flex-direction:column;gap:6px;">
@@ -33,7 +33,7 @@
           <input
             type="text"
             id="nombre"
-            name="nombre"
+            name="nom"
             placeholder="Ej. Martina López"
             required
             style="width:100%;padding:11px 14px;background:#111;border:1px solid #2A2A2A;border-radius:6px;color:#fff;font-size:14px;outline:none;transition:border-color 0.2s;"
@@ -48,7 +48,7 @@
           <input
             type="tel"
             id="telefono"
-            name="telefono"
+            name="tel"
             placeholder="Ej. +54 11 4567-8900"
             required
             style="width:100%;padding:11px 14px;background:#111;border:1px solid #2A2A2A;border-radius:6px;color:#fff;font-size:14px;outline:none;transition:border-color 0.2s;"
@@ -78,7 +78,7 @@
           <input
             type="password"
             id="password"
-            name="password"
+            name="pass"
             placeholder="Mínimo 8 caracteres"
             required
             minlength="8"
