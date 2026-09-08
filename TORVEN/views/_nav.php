@@ -12,6 +12,7 @@
       ['horarios.php', 'Horarios'],
       ['consultas.php','Consultas'],
       ['contacto.php', 'Contacto'],
+      ['nostoros.php', 'Nostros'],
     ];
     foreach ($links as [$href, $label]):
       $active = ($page === $href);
