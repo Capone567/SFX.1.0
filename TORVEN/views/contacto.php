@@ -24,7 +24,7 @@
   <!-- Contact cards -->
   <div style="display:flex;flex-direction:column;gap:12px;">
     <div style="display:flex;justify-content:center;padding:16px;border-radius:8px;background:#1A1A1A;border:1px solid #2A2A2A;">
-      <img src="src/imports/TORVEN_LOGO.png" alt="Torven" style="height:72px;width:auto;object-fit:contain;">
+      <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:72px;width:auto;object-fit:contain;">
     </div>
     <?php
     $contacts = [['📍 Dirección','Av. Díaz Vélez 4130, CABA'],['📞 Teléfono','+54 11 4567-8900'],['✉️ Email','turnos@torven.com.ar']];

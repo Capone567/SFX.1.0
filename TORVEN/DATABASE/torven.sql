@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `clientes` (
   `id_cliente` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
   `telefono` varchar(50) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -198,8 +197,8 @@ CREATE TABLE `turnos` (
 --
 
 CREATE TABLE `usuarios` (
-  'nom_usuario' varchar(50) NOT NULL,
-  'telefono' varchar(20) NOT NULL,
+  `nom_usuario` varchar(50) NOT NULL,
+  `telefono` varchar(20) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(255) NOT NULL,

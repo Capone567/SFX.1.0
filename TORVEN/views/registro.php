@@ -13,7 +13,7 @@
     <!-- Logo -->
     <div style="text-align:center;margin-bottom:40px;">
       <a href="index.php">
-        <img src="src/imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
+        <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
       </a>
     </div>
 
@@ -25,7 +25,7 @@
         <p style="font-size:14px;color:#9CA3AF;">Registrate para reservar turnos y hacer seguimiento de tu vehículo.</p>
       </div>
 
-      <form action="../PHP/registro.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
+      <form action="../config/registro.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
 
         <!-- Nombre completo -->
         <div style="display:flex;flex-direction:column;gap:6px;">

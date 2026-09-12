@@ -1,7 +1,7 @@
 <footer style="background:#600000;padding:48px 64px;">
   <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;">
     <div>
-      <img src="src/imports/TORVEN_LOGO.png" alt="Torven" style="height:64px;width:auto;object-fit:contain;">
+      <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:64px;width:auto;object-fit:contain;">
       <p style="font-size:14px;margin-top:12px;max-width:260px;color:rgba(255,255,255,0.55);">Taller mecánico automotriz especializado.<br>Av. Díaz Vélez 4130, CABA</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 64px;">

@@ -13,7 +13,7 @@
     <!-- Logo -->
     <div style="text-align:center;margin-bottom:40px;">
       <a href="index.php">
-        <img src="src/imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
+        <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
       </a>
     </div>
 
