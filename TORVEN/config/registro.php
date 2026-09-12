@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $usuario  = trim($_POST['nom'] ?? '');
 $telefono = trim($_POST['tel'] ?? '');
 $email    = trim($_POST['email'] ?? '');
-$password = $_POST['pass'] ?? '';
+$password = $_POST['password'] ?? '';
 
 
 //En caso de que alguno este vacio se reinicia la pagina con un alert

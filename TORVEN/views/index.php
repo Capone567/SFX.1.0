@@ -2,6 +2,7 @@
 <?php include '_head.php'; ?>
 <?php include '_nav.php'; ?>
 
+
 <style>
   /* ---- Reveal al hacer scroll ---- */
   .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }

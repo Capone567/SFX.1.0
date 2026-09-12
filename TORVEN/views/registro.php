@@ -78,7 +78,7 @@
           <input
             type="password"
             id="password"
-            name="pass"
+            name="password"
             placeholder="Mínimo 8 caracteres"
             required
             minlength="8"

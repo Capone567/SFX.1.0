@@ -1,3 +1,4 @@
+<?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
 <?php $title = $title ?? 'Torven'; ?>
 <!DOCTYPE html>
 <html lang="es">

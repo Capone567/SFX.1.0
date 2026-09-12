@@ -1,4 +1,5 @@
-<?php $page = $page ?? ''; ?>
+<?php $page = $page ?? ''; $logueado = $_SESSION['usuario'] ?? null; ?>
+
 <nav class="nav">
   <a href="index.php" class="nav-logo">
     <img src="../imports/TORVEN_LOGO.png" alt="Torven">
@@ -9,12 +10,11 @@
     $links = [
       ['index.php',    'Inicio'],
       ['modelos.php',  'Modelos'],
-      ['novedades.php','Novedades'],
       ['resenas.php',  'Reseñas'],
       ['horarios.php', 'Horarios'],
       ['consultas.php','Consultas'],
       ['contacto.php', 'Contacto'],
-      ['nostoros.php', 'Nostros'],
+      ['nosotros.php', 'Nosotros'],
     ];
     foreach ($links as [$href, $label]):
       $active = ($page === $href);
@@ -24,8 +24,13 @@
   </div>
 
   <div class="nav-actions">
+    <?php if ($logueado): ?>
+    <span class="nav-btn ghost" style="padding:12px 20px;">👋 Hola, <?= htmlspecialchars($logueado) ?></span>
+    <a href="../config/logout.php" class="nav-btn primary">Cerrar sesión</a>
+    <?php else: ?>
     <a href="registro.php" class="nav-btn ghost">Registrarse</a>
     <a href="login.php" class="nav-btn primary">Iniciar sesión</a>
+    <?php endif; ?>
   </div>
 </nav>
 

@@ -25,7 +25,7 @@
         <p style="font-size:14px;color:#9CA3AF;">Accedé a tu cuenta para gestionar tus turnos.</p>
       </div>
 
-      <form action="#" method="POST" style="display:flex;flex-direction:column;gap:20px;">
+      <form action="../config/login.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
 
         <!-- Email -->
         <div style="display:flex;flex-direction:column;gap:6px;">
