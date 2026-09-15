@@ -71,8 +71,8 @@ $rol->close();
 // Se modifica la variable de la contra para hacerla encriptada
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-$insertar = $conexion->prepare("INSERT INTO usuarios (nom_usuario, telefono, email, password, id_rol) VALUES (?, ?, ?, ?, ?)");
-$insertar->bind_param("ssssi", $usuario, $telefono, $email, $password_hash, $id_rol);
+$insertar = $conexion->prepare("INSERT INTO usuarios (nom_usuario, telefono, email, password) VALUES (?, ?, ?, ?)");
+$insertar->bind_param("ssss", $usuario, $telefono, $email, $password_hash);
 
 
 if ($insertar->execute()) {

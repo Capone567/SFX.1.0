@@ -25,7 +25,7 @@
 
   <div class="nav-actions">
     <?php if ($logueado): ?>
-    <span class="nav-btn ghost" style="padding:12px 20px;">👋 Hola, <?= htmlspecialchars($logueado) ?></span>
+    <a class="nav-btn ghost" style="padding:12px 20px;" href="profile.php">👋 Hola, <?= htmlspecialchars($logueado) ?></a>  
     <a href="../config/logout.php" class="nav-btn primary">Cerrar sesión</a>
     <?php else: ?>
     <a href="registro.php" class="nav-btn ghost">Registrarse</a>
@@ -54,11 +54,11 @@
   }
 
   .nav-logo {
-    padding: 6px; border-radius: 12px;
+    padding: -4px; border-radius: 12px;
     transition: transform .25s ease, background .25s ease;
   }
   .nav-logo img {
-    height: 64px; width: auto; object-fit: contain; display: block;
+    height: 90px; width: auto; object-fit: contain; display: block;
     filter: drop-shadow(0 0 0 rgba(192,0,0,0));
     transition: transform .3s ease, filter .3s ease;
   }
