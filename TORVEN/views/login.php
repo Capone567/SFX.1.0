@@ -1,8 +1,9 @@
-<?php $title = 'Iniciar sesión'; $page = 'login.php'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: INICIAR SESIÓN — Solo contenido (sin head/nav/footer)
+     Las funciones JS están en js/script.js
+     ============================================================ -->
 
-<main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 64px;background:#111;position:relative;overflow:hidden;">
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 64px;background:#111;position:relative;overflow:hidden;">
 
   <!-- Fondo decorativo -->
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 40%,rgba(192,0,0,0.12) 0%,transparent 70%);pointer-events:none;"></div>
@@ -12,8 +13,8 @@
 
     <!-- Logo -->
     <div style="text-align:center;margin-bottom:40px;">
-      <a href="index.php">
-        <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
+      <a href="#index">
+        <img src="imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
       </a>
     </div>
 
@@ -25,7 +26,7 @@
         <p style="font-size:14px;color:#9CA3AF;">Accedé a tu cuenta para gestionar tus turnos.</p>
       </div>
 
-      <form action="../config/login.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
+      <form action="config/login.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
 
         <!-- Email -->
         <div style="display:flex;flex-direction:column;gap:6px;">
@@ -82,7 +83,7 @@
       <!-- Link a registro -->
       <p style="text-align:center;font-size:14px;color:#9CA3AF;">
         ¿No tenés cuenta?
-        <a href="registro.php" style="color:#C00000;font-weight:700;margin-left:4px;">Registrarse</a>
+        <a href="#registro" style="color:#C00000;font-weight:700;margin-left:4px;">Registrarse</a>
       </p>
 
     </div>
@@ -93,8 +94,4 @@
     </p>
 
   </div>
-</main>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>
+</div>

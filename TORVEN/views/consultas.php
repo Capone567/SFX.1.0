@@ -1,6 +1,6 @@
-<?php $title = 'Consultas'; $page = 'consultas.php'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: CONSULTAS — Solo contenido (sin head/nav/footer)
+     ============================================================ -->
 
 <!-- HEADER -->
 <div style="background:#C00000;padding:128px 64px 48px;">
@@ -40,7 +40,7 @@
   <div style="display:flex;flex-direction:column;gap:16px;">
     <div style="padding:24px;border-radius:8px;background:#C00000;text-align:center;">
       <div style="display:flex;justify-content:center;margin-bottom:16px;">
-        <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:60px;width:auto;object-fit:contain;">
+        <img src="imports/TORVEN_LOGO.png" alt="Torven" style="height:60px;width:auto;object-fit:contain;">
       </div>
       <h4 style="font-size:15px;font-weight:800;margin-bottom:12px;color:#fff;">Contacto directo</h4>
       <p style="font-size:20px;font-weight:800;color:#fff;">+54 11 4567-8900</p>
@@ -75,7 +75,3 @@
     <?php endforeach; ?>
   </div>
 </div>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>

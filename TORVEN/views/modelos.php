@@ -1,6 +1,6 @@
-<?php $title = 'Modelos'; $page = 'modelos.php'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: MODELOS — Solo contenido (sin head/nav/footer)
+     ============================================================ -->
 
 <!-- HEADER -->
 <div style="background:#C00000;padding:128px 64px 64px;">
@@ -47,12 +47,8 @@
         <span style="font-size:11px;padding:3px 8px;border-radius:4px;background:rgba(192,0,0,0.12);color:#9CA3AF;border:1px solid #2A2A2A;"><?= $s ?></span>
         <?php endforeach; ?>
       </div>
-      <a href="horarios.php" style="display:block;width:100%;padding:10px;border-radius:6px;background:#C00000;color:#fff;font-size:13px;font-weight:700;text-align:center;">Reservar para este modelo →</a>
+      <a href="#horarios" style="display:block;width:100%;padding:10px;border-radius:6px;background:#C00000;color:#fff;font-size:13px;font-weight:700;text-align:center;">Reservar para este modelo →</a>
     </div>
   </div>
   <?php endforeach; ?>
 </div>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>

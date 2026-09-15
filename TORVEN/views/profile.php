@@ -1,10 +1,12 @@
-<?php $title = 'Mi Perfil'; $page = 'perfil'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: MI PERFIL — Solo contenido (sin head/nav/footer)
+     Las funciones JS (profGuardar, cerrarModal, etc.) están en
+     js/script.js como funciones globales.
+     ============================================================ -->
 
-<main style="min-height:100vh;background:#111;padding:100px 64px 80px;">
+<div style="min-height:100vh;background:#111;padding:100px 64px 80px;">
 
-  <!-- ── Header ── -->
+  <!-- Header -->
   <div style="display:flex;align-items:center;gap:24px;padding-bottom:36px;border-bottom:1px solid #2A2A2A;margin-bottom:40px;">
 
     <!-- Avatar -->
@@ -22,10 +24,10 @@
     </div>
   </div>
 
-  <!-- ── Grid principal ── -->
+  <!-- Grid principal -->
   <div style="display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start;">
 
-    <!-- ── Formulario ── -->
+    <!-- Formulario -->
     <div style="background:#1A1A1A;border:1px solid #2A2A2A;border-radius:12px;padding:40px;">
       <h2 style="font-size:17px;font-weight:800;color:#fff;margin-bottom:30px;">Información personal</h2>
 
@@ -142,7 +144,7 @@
       </form>
     </div>
 
-    <!-- ── Panel lateral ── -->
+    <!-- Panel lateral -->
     <div style="display:flex;flex-direction:column;gap:16px;">
 
       <!-- Resumen -->
@@ -174,7 +176,7 @@
           <p style="font-size:14px;font-weight:700;color:#fff;">Toyota RAV4 · AB 123 CD</p>
           <p style="font-size:12px;color:#9CA3AF;margin-top:4px;">Lun 8 Sep 2026 · 09:00h</p>
         </div>
-        <a href="index.php#horarios" style="display:block;margin-top:12px;padding:10px;border-radius:6px;background:transparent;border:1px solid #2A2A2A;color:#9CA3AF;font-size:13px;font-weight:600;text-align:center;text-decoration:none;"
+        <a href="#horarios" style="display:block;margin-top:12px;padding:10px;border-radius:6px;background:transparent;border:1px solid #2A2A2A;color:#9CA3AF;font-size:13px;font-weight:600;text-align:center;text-decoration:none;"
           onmouseover="this.style.borderColor='#4B5563';this.style.color='#fff'"
           onmouseout="this.style.borderColor='#2A2A2A';this.style.color='#9CA3AF'"
         >Reservar nuevo turno →</a>
@@ -194,9 +196,9 @@
 
     </div>
   </div>
-</main>
+</div>
 
-<!-- ══ Modal confirmar eliminación ══ -->
+<!-- Modal confirmar eliminación -->
 <div id="modal-delete" style="display:none;position:fixed;inset:0;z-index:300;align-items:center;justify-content:center;background:rgba(0,0,0,0.78);backdrop-filter:blur(5px);">
   <div style="background:#1A1A1A;border:1px solid #3A1010;border-radius:14px;padding:44px 40px;max-width:440px;width:90%;position:relative;animation:fadeUp 0.2s ease;">
 
@@ -240,11 +242,3 @@
     </div>
   </div>
 </div>
-
-<style>
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(16px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-</style>
-

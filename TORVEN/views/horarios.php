@@ -1,6 +1,6 @@
-<?php $title = 'Horarios'; $page = 'horarios.php'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: HORARIOS — Solo contenido (sin head/nav/footer)
+     ============================================================ -->
 
 <?php
 $days = [
@@ -96,7 +96,3 @@ $freeCount = count(array_filter($activeSlots, fn($s) => $s[1]));
     <p style="font-size:12px;text-align:center;margin-top:12px;color:#9CA3AF;">O llamanos: <strong style="color:#fff;">+54 11 4567-8900</strong></p>
   </div>
 </div>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>

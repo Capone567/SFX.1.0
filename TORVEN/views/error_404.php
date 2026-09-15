@@ -1,8 +1,8 @@
-<?php $title = '404 — Página no encontrada'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: 404 — Solo contenido (sin head/nav/footer)
+     ============================================================ -->
 
-<main style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#111;">
+<div style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#111;">
 
   <!-- Foto de fondo igual que el hero -->
   <img
@@ -18,7 +18,7 @@
   <!-- Gradiente radial rojo desde el centro -->
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 55%, rgba(140,0,0,0.35) 0%, transparent 70%);"></div>
 
-  <!-- Línea roja izquierda (igual que el hero) -->
+  <!-- Línea roja izquierda -->
   <div style="position:absolute;top:0;bottom:0;left:0;width:4px;background:linear-gradient(to bottom,transparent,#C00000 30%,#C00000 70%,transparent);"></div>
 
   <!-- Logo watermark -->
@@ -55,17 +55,12 @@
     <!-- Botones -->
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
       <a
-        href="index.php"
+        href="#index"
         style="padding:14px 36px;border-radius:6px;background:#C00000;color:#fff;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:0.03em;transition:background 0.18s;"
-        onmouseover="this.style.background='#A00000'"
-        onmouseout="this.style.background='#C00000'"
       >Volver al inicio</a>
       <a
-        href="index.php#horarios"
-        onclick="if(window.showPage){showPage('horarios')};return window.showPage?false:true;"
+        href="#horarios"
         style="padding:14px 32px;border-radius:6px;background:rgba(255,255,255,0.07);color:#fff;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(4px);transition:background 0.18s;"
-        onmouseover="this.style.background='rgba(255,255,255,0.13)'"
-        onmouseout="this.style.background='rgba(255,255,255,0.07)'"
       >Reservar turno →</a>
     </div>
 
@@ -92,8 +87,4 @@
     </p>
   </div>
 
-</main>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>
+</div>

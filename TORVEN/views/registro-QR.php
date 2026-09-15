@@ -1,10 +1,12 @@
-<?php $title = 'Registro de Servicio'; $page = ''; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: REGISTRO DE SERVICIO — Solo contenido (sin head/nav/footer)
+     Las funciones JS (confirmarServicio, limpiarForm, etc.) están
+     en js/script.js como funciones globales.
+     ============================================================ -->
 
-<main style="min-height:100vh;background:#111;padding:100px 64px 80px;">
+<div style="min-height:100vh;background:#111;padding:100px 64px 80px;">
 
-  <!-- ── Header ── -->
+  <!-- Header -->
   <div style="display:flex;align-items:flex-start;justify-content:space-between;padding-bottom:32px;border-bottom:1px solid #2A2A2A;margin-bottom:40px;">
     <div>
       <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:4px;background:rgba(192,0,0,0.12);border:1px solid rgba(192,0,0,0.3);margin-bottom:14px;">
@@ -23,13 +25,13 @@
     </div>
   </div>
 
-  <!-- ── Grid ── -->
+  <!-- Grid -->
   <div style="display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start;">
 
-    <!-- ── Formulario ── -->
+    <!-- Formulario -->
     <form id="form-servicio" onsubmit="confirmarServicio(event)" style="display:flex;flex-direction:column;gap:20px;">
 
-      <!-- Bloque: Datos del vehículo -->
+      <!-- Datos del vehículo -->
       <div style="background:#1A1A1A;border:1px solid #2A2A2A;border-radius:12px;overflow:hidden;">
         <div style="padding:18px 28px;border-bottom:1px solid #2A2A2A;display:flex;align-items:center;gap:10px;">
           <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#C00000" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M7 12h10M7 9h2M15 9h2"/></svg>
@@ -80,7 +82,7 @@
         </div>
       </div>
 
-      <!-- Bloque: Datos del cliente -->
+      <!-- Datos del cliente -->
       <div style="background:#1A1A1A;border:1px solid #2A2A2A;border-radius:12px;overflow:hidden;">
         <div style="padding:18px 28px;border-bottom:1px solid #2A2A2A;display:flex;align-items:center;gap:10px;">
           <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#C00000" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -122,7 +124,7 @@
             >
           </div>
 
-          <!-- Email — ocupa todo el ancho -->
+          <!-- Email -->
           <div style="display:flex;flex-direction:column;gap:7px;grid-column:1/-1;">
             <label for="email" style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#6B7280;">
               Email del cliente
@@ -141,7 +143,7 @@
         </div>
       </div>
 
-      <!-- Bloque: Servicio realizado -->
+      <!-- Trabajo realizado -->
       <div style="background:#1A1A1A;border:1px solid #2A2A2A;border-radius:12px;overflow:hidden;">
         <div style="padding:18px 28px;border-bottom:1px solid #2A2A2A;display:flex;align-items:center;gap:10px;">
           <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#C00000" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
@@ -213,7 +215,7 @@
         </div>
       </div>
 
-      <!-- Botón confirmar -->
+      <!-- Botones -->
       <div style="display:flex;gap:12px;align-items:center;">
         <button
           type="submit"
@@ -235,63 +237,57 @@
 
     </form>
 
-    <!-- ── Panel lateral ── -->
+    <!-- Panel lateral -->
     <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:88px;">
 
       <!-- Vista previa -->
       <div style="background:#1A1A1A;border:1px solid #2A2A2A;border-radius:12px;padding:24px;">
         <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#6B7280;margin-bottom:16px;">Vista previa</p>
         <div style="display:flex;flex-direction:column;gap:12px;">
-
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:12px;color:#4B5563;">Patente</span>
             <span id="prev-patente" style="font-size:13px;font-weight:700;color:#fff;letter-spacing:0.12em;">—</span>
           </div>
           <div style="height:1px;background:#222;"></div>
-
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:12px;color:#4B5563;">Modelo</span>
             <span id="prev-modelo" style="font-size:13px;font-weight:600;color:#9CA3AF;text-align:right;max-width:160px;">—</span>
           </div>
           <div style="height:1px;background:#222;"></div>
-
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:12px;color:#4B5563;">Cliente</span>
             <span id="prev-nombre" style="font-size:13px;font-weight:600;color:#9CA3AF;text-align:right;max-width:160px;">—</span>
           </div>
           <div style="height:1px;background:#222;"></div>
-
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:12px;color:#4B5563;">Servicio</span>
             <span id="prev-servicio" style="font-size:13px;font-weight:600;color:#9CA3AF;text-align:right;max-width:160px;">—</span>
           </div>
           <div style="height:1px;background:#222;"></div>
-
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="font-size:12px;color:#4B5563;">Fecha</span>
             <span id="prev-fecha" style="font-size:13px;font-weight:600;color:#9CA3AF;">—</span>
           </div>
-
         </div>
       </div>
 
-      <!-- Atajos rápidos -->
+      <!-- Accesos rápidos -->
       <div style="background:#1A1A1A;border:1px solid #2A2A2A;border-radius:12px;padding:24px;">
         <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#6B7280;margin-bottom:14px;">Accesos rápidos</p>
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <a href="index.php#horarios" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;background:#111;border:1px solid #2A2A2A;text-decoration:none;color:#D1D5DB;font-size:13px;font-weight:600;transition:border-color 0.18s;"
+          <a href="#horarios" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;background:#111;border:1px solid #2A2A2A;text-decoration:none;color:#D1D5DB;font-size:13px;font-weight:600;transition:border-color 0.18s;"
             onmouseover="this.style.borderColor='#4B5563'"
             onmouseout="this.style.borderColor='#2A2A2A'">
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#C00000" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
             Ver horarios
           </a>
-          <a href="index.php#consultas" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;background:#111;border:1px solid #2A2A2A;text-decoration:none;color:#D1D5DB;font-size:13px;font-weight:600;transition:border-color 0.18s;"
+          <a href="#consultas" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;background:#111;border:1px solid #2A2A2A;text-decoration:none;color:#D1D5DB;font-size:13px;font-weight:600;transition:border-color 0.18s;"
             onmouseover="this.style.borderColor='#4B5563'"
             onmouseout="this.style.borderColor='#2A2A2A'">
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#C00000" stroke-width="2"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
             Consultas
           </a>
-          <a href="Profile.php" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;background:#111;border:1px solid #2A2A2A;text-decoration:none;color:#D1D5DB;font-size:13px;font-weight:600;transition:border-color 0.18s;"
+          <a href="#profile" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;background:#111;border:1px solid #2A2A2A;text-decoration:none;color:#D1D5DB;font-size:13px;font-weight:600;transition:border-color 0.18s;"
             onmouseover="this.style.borderColor='#4B5563'"
             onmouseout="this.style.borderColor='#2A2A2A'">
             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#C00000" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -309,9 +305,9 @@
     </div>
   </div>
 
-</main>
+</div>
 
-<!-- ── Modal de confirmación ── -->
+<!-- Modal de confirmación -->
 <div id="modal-ok" style="display:none;position:fixed;inset:0;z-index:300;align-items:center;justify-content:center;background:rgba(0,0,0,0.78);backdrop-filter:blur(5px);">
   <div style="background:#1A1A1A;border:1px solid #2A2A2A;border-radius:14px;padding:44px 40px;max-width:460px;width:90%;text-align:center;animation:fadeUp 0.22s ease;">
 
@@ -355,13 +351,3 @@
     </div>
   </div>
 </div>
-
-<style>
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(14px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-/* Estilo del calendario oscuro */
-input[type="date"]::-webkit-calendar-picker-indicator { filter:invert(0.4); cursor:pointer; }
-select option { background:#1A1A1A; color:#fff; }
-</style>

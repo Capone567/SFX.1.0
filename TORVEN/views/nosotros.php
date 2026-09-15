@@ -1,10 +1,10 @@
-<?php $title = 'Sobre Nosotros'; $page = ''; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: SOBRE NOSOTROS — Solo contenido (sin head/nav/footer)
+     ============================================================ -->
 
-<main style="min-height:100vh;background:#111;padding:100px 72px 80px;">
+<div style="min-height:100vh;background:#111;padding:100px 72px 80px;">
 
-  <!-- ── Header ── -->
+  <!-- Header -->
   <div style="padding-bottom:40px;border-bottom:1px solid #2A2A2A;margin-bottom:64px;">
     <div style="display:inline-flex;align-items:center;gap:8px;padding:5px 13px;border-radius:4px;background:rgba(192,0,0,0.12);border:1px solid rgba(192,0,0,0.3);margin-bottom:16px;">
       <div style="width:6px;height:6px;border-radius:50%;background:#C00000;"></div>
@@ -18,7 +18,7 @@
     </p>
   </div>
 
-  <!-- ── Grid del equipo ── -->
+  <!-- Grid del equipo -->
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     <?php
     $equipo = [
@@ -81,43 +81,28 @@
 
       <!-- Placeholder de foto -->
       <div style="position:relative;height:220px;background:#161616;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border-bottom:1px solid #2A2A2A;">
-
-        <!-- Inicial / avatar -->
         <div style="width:72px;height:72px;border-radius:50%;background:<?= $bgAccent ?>;border:2px solid <?= $color ?>;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:<?= $color ?>;">
           <?= $initials ?>
         </div>
-
-        <!-- Texto placeholder -->
         <div style="display:flex;align-items:center;gap:7px;">
           <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="#2A2A2A" stroke-width="2">
             <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
           </svg>
           <span style="font-size:11px;color:#2A2A2A;font-weight:600;letter-spacing:0.08em;">Foto pendiente</span>
         </div>
-
-        <!-- Barra de color superior -->
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:<?= $color ?>;"></div>
       </div>
 
       <!-- Info -->
       <div style="padding:24px;flex:1;display:flex;flex-direction:column;gap:10px;">
-
-        <!-- Rol badge -->
         <span style="display:inline-block;width:fit-content;font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;background:<?= $bgAccent ?>;color:<?= $color ?>;letter-spacing:0.06em;">
           <?= $rol ?>
         </span>
-
         <h3 style="font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.3px;"><?= $nombre ?></h3>
-
         <p style="font-size:13px;color:#6B7280;line-height:1.65;flex:1;"><?= $desc ?></p>
-
       </div>
     </div>
     <?php endforeach; ?>
   </div>
 
-</main>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>
+</div>

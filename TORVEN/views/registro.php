@@ -1,8 +1,8 @@
-<?php $title = 'Registrarse'; $page = 'registro.php'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: REGISTRARSE — Solo contenido (sin head/nav/footer)
+     ============================================================ -->
 
-<main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 64px;background:#111;position:relative;overflow:hidden;">
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 64px;background:#111;position:relative;overflow:hidden;">
 
   <!-- Fondo decorativo -->
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 40%,rgba(192,0,0,0.12) 0%,transparent 70%);pointer-events:none;"></div>
@@ -12,8 +12,8 @@
 
     <!-- Logo -->
     <div style="text-align:center;margin-bottom:40px;">
-      <a href="index.php">
-        <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
+      <a href="#index">
+        <img src="imports/TORVEN_LOGO.png" alt="Torven" style="height:48px;width:auto;object-fit:contain;margin:0 auto;">
       </a>
     </div>
 
@@ -25,7 +25,7 @@
         <p style="font-size:14px;color:#9CA3AF;">Registrate para reservar turnos y hacer seguimiento de tu vehículo.</p>
       </div>
 
-      <form action="../config/registro.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
+      <form action="config/registro.php" method="POST" style="display:flex;flex-direction:column;gap:20px;">
 
         <!-- Nombre completo -->
         <div style="display:flex;flex-direction:column;gap:6px;">
@@ -114,7 +114,7 @@
       <!-- Link a login -->
       <p style="text-align:center;font-size:14px;color:#9CA3AF;">
         ¿Ya tenés cuenta?
-        <a href="login.php" style="color:#C00000;font-weight:700;margin-left:4px;">Iniciar sesión</a>
+        <a href="#login" style="color:#C00000;font-weight:700;margin-left:4px;">Iniciar sesión</a>
       </p>
 
     </div>
@@ -125,8 +125,4 @@
     </p>
 
   </div>
-</main>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>
+</div>

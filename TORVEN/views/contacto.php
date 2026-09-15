@@ -1,6 +1,6 @@
-<?php $title = 'Contacto'; $page = 'contacto.php'; ?>
-<?php include '_head.php'; ?>
-<?php include '_nav.php'; ?>
+<!-- ============================================================
+     VISTA: CONTACTO — Solo contenido (sin head/nav/footer)
+     ============================================================ -->
 
 <!-- HEADER -->
 <div style="background:#C00000;padding:128px 64px 48px;">
@@ -24,7 +24,7 @@
   <!-- Contact cards -->
   <div style="display:flex;flex-direction:column;gap:12px;">
     <div style="display:flex;justify-content:center;padding:16px;border-radius:8px;background:#1A1A1A;border:1px solid #2A2A2A;">
-      <img src="../imports/TORVEN_LOGO.png" alt="Torven" style="height:72px;width:auto;object-fit:contain;">
+      <img src="imports/TORVEN_LOGO.png" alt="Torven" style="height:72px;width:auto;object-fit:contain;">
     </div>
     <?php
     $contacts = [['📍 Dirección','Av. Díaz Vélez 4130, CABA'],['📞 Teléfono','+54 11 4567-8900'],['✉️ Email','turnos@torven.com.ar']];
@@ -71,7 +71,3 @@
 </div>
 
 <div style="padding-bottom:64px;"></div>
-
-<?php include '_footer.php'; ?>
-</body>
-</html>
