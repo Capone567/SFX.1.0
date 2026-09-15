@@ -3,7 +3,7 @@ $server = "localhost";
 $user = "root";
 $pass = "";
 $db = "torven";
-$port = "3308";
+$port = "3306";
 
 $conexion = new mysqli($server, $user, $pass, $db, $port);
 $conexion->set_charset("utf8mb4");
